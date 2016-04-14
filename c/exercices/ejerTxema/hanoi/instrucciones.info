@@ -1,0 +1,16 @@
+╻  ┏━┓┏━┓   ╺┳╸┏━┓┏━┓┏━┓┏━╸┏━┓   ╺┳┓┏━╸   ╻ ╻┏━┓┏┓╻┏━┓╻
+┃  ┣━┫┗━┓    ┃ ┃ ┃┣┳┛┣┳┛┣╸ ┗━┓    ┃┃┣╸    ┣━┫┣━┫┃┗┫┃ ┃┃
+┗━╸╹ ╹┗━┛    ╹ ┗━┛╹┗╸╹┗╸┗━╸┗━┛   ╺┻┛┗━╸   ╹ ╹╹ ╹╹ ╹┗━┛╹
+
+                Apila los discos de la primera torre en cualquiera
+                de las otras dos torres.
+
+
+             RESTRICCIONES:
+
+                - No se puede mover más de un disco a la vez.
+
+                - Sólo se puede mover el último disco de cada torre.
+
+                - No se puede poner un disco más grande sobre uno más
+                  pequeño.
