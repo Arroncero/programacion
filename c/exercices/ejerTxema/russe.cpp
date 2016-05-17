@@ -5,7 +5,7 @@
  *
  *    Description: multiplica dos números enteros positivos.
  *
-=====================================================================================
+ =====================================================================================
  */
 
 #include <stdio.h>
@@ -15,8 +15,12 @@ int main (int argc, const char **argv){
 
     int op1,
 	op2,
+	aux1,
+	aux2,
 	resultado=0;
 
+    printf ("\nEste programa multiplica dos "
+	    "numeros naturales y positivos.\n");
     printf ("Introduce el primer operador "
 	    "(Si quieres multiplicar por 0, "
 	    "introdúcelo aquí):\n");
@@ -24,6 +28,9 @@ int main (int argc, const char **argv){
     printf ("Introduce el segundo operador "
 	    "(No introducir 0 aquí):\n");
     scanf (" %i", &op2);
+
+    aux1 = op1;
+    aux2 = op2;
 
     do{
 	if(op2 % 2 == 1)
@@ -37,7 +44,7 @@ int main (int argc, const char **argv){
 
     }while(op2 != 1);
 
-    printf ("El resultado de multiplicar es %i.\n", resultado);
+    printf ("El resultado de multiplicar %i y %i es %i.\n", aux1, aux2, resultado);
 
     return EXIT_SUCCESS;
 }
