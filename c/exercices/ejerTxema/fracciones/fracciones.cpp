@@ -29,7 +29,6 @@ void reserva(struct TPila *pila){
 void imprimir (struct TPila *pila){
     for (int i = pila->cima; i>=0; i--)
 	printf ("%i\n", pila->datos[i]);
-
 }
 
 double calcular(struct TPila *pila){
@@ -62,11 +61,12 @@ int main (int argc, const char **argv){
 	//pedir números al usuario
 	scanf ("%i", &pila.datos[pila.cima]);
 	//si el numero es 0, sale
-	if (pila.datos[pila.cima] == 0)
+	if (pila.datos[pila.cima] == 0){
 	    bandera = 1;
+	    pila.cima--;
+	}
 	//si el numero es != 0, paso 2.
     }
-    pila.cima--;
 
     printf ("el resultado de la operacion es %lf, capullo.\n", calcular(&pila));
 
