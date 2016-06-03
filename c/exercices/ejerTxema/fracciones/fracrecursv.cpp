@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #define FIN_ARRAY -1
 
+
 struct TPila{
     int *datos;
     int cima;
@@ -31,14 +32,11 @@ void imprimir (struct TPila *pila){
 	printf ("%i\n", pila->datos[i]);
 }
 
-double calcular(struct TPila *pila){
-    double resultado=pila->datos[pila->cima];
-
-    while((pila->cima -1) != FIN_ARRAY){
-	resultado = (pila->datos[pila->cima-1]) + 1/resultado;
-	pila->cima--;
-    }
-    return resultado;
+double calcular(struct TPila *pila, int posicion){
+    if (pila->datos[posicion + 1] == 0)
+	return pila->datos[posicion];
+    printf ("%i\n", pila->datos[posicion]);
+    return pila->datos[posicion] +1/calcular(pila, posicion+1);
 }
 
 void liberar(struct TPila *pila){
@@ -47,27 +45,24 @@ void liberar(struct TPila *pila){
 
 int main (int argc, const char **argv){
 
+    int posicion = 0;
     int bandera = 0;
     struct TPila pila;
-    //inicializar array
     inicializar(&pila);
-    //incrementar cima
     printf ("Introduzca los numeros con los que quiere operar:\n");
     while (bandera == 0){
 	pila.cima++;
-	//incrementar espacio
 	reserva(&pila);
-	//pedir números al usuario
 	scanf ("%i", &pila.datos[pila.cima]);
-	//si el numero es 0, sale
 	if (pila.datos[pila.cima] == 0){
 	    bandera = 1;
 	    pila.cima--;
 	}
-	//si el numero es != 0, paso 2.
     }
 
-    printf ("el resultado de la operacion es %lf, capullo.\n", calcular(&pila));
+    imprimir (&pila);
+
+    printf ("el resultado de la operacion es %lf, capullo.\n", calcular(&pila, posicion));
 
     liberar(&pila);
 
